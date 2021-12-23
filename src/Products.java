@@ -9,27 +9,28 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Products {
-    private final List<Product> Products;
+    private final List<RetailPrice> RetailPrice;
+    private final List<StockBalance> StockBalance;
 
     public Products(Path path) {
-        var products = new ArrayList<Product>();
+        var retailPrice = new ArrayList<RetailPrice>();
+        var stockBalance = new ArrayList<StockBalance>();
         try (BufferedReader bR = Files.newBufferedReader(path, Charset.forName("Windows-1251"))) {
             bR.readLine();
             while (bR.ready()) {
                 var row = splitRow(bR.readLine());
-                products.add(new Product(row[0], row[1], row[2], row[3]));
+                retailPrice.add(new RetailPrice(row[1], row[0], row[2]));
+                stockBalance.add(new StockBalance(row[1], row[3]));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Products = products;
+        RetailPrice = retailPrice;
+        StockBalance = stockBalance;
     }
 
     private String[] splitRow(String row) {
         var result = row.split(";");
-        if (result.length > 4) {
-            result[3] += "." + result[4];
-        }
         return Arrays.copyOfRange(result, 0, 4);
     }
 }
