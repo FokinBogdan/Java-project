@@ -19,7 +19,7 @@ public class Products {
             bR.readLine();
             while (bR.ready()) {
                 var row = splitRow(bR.readLine());
-                retailPrice.add(new RetailPrice(row[1], row[0], row[2]));
+                retailPrice.add(new RetailPrice(row[2], row[1], row[0]));
                 stockBalance.add(new StockBalance(row[1], row[3]));
             }
         } catch (IOException e) {
@@ -32,5 +32,13 @@ public class Products {
     private String[] splitRow(String row) {
         var result = row.split(";");
         return Arrays.copyOfRange(result, 0, 4);
+    }
+
+    public List<RetailPrice> getRetailPrice() {
+        return RetailPrice;
+    }
+
+    public List<StockBalance> getStockBalance() {
+        return StockBalance;
     }
 }
