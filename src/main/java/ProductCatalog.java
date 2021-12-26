@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class Parser {
+public class ProductCatalog {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Хотите распарсить CSV-файл в Базу Данных? (+ или -)");
@@ -87,7 +87,9 @@ public class Parser {
         try {
             var totalPrice = 0.0;
             var count = 0.0;
-            while(set.next()) {
+            while(true) {
+                assert set != null;
+                if (!set.next()) break;
                 totalPrice += set.getDouble(1) * set.getDouble(3);
                 count += set.getDouble(3);
             }
@@ -109,7 +111,9 @@ public class Parser {
                 """, amount, count));
 
         try {
-            while(set.next()) {
+            while(true) {
+                assert set != null;
+                if (!set.next()) break;
                 System.out.println(set.getString(1) + " | "
                         + set.getString(2) + " | "
                         + set.getString(3));
@@ -208,6 +212,5 @@ public class Parser {
             }
         }
     }
-
 }
 
