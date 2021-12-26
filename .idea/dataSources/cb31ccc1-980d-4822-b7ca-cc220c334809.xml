@@ -1333,69 +1333,89 @@
       <Position>1</Position>
     </argument>
     <table id="491" parent="170" name="balance"/>
-    <table id="492" parent="170" name="price"/>
-    <table id="493" parent="170" name="sqlite_master">
+    <table id="492" parent="170" name="category"/>
+    <table id="493" parent="170" name="price"/>
+    <table id="494" parent="170" name="sqlite_master">
       <System>1</System>
     </table>
-    <column id="494" parent="491" name="articleNumber">
+    <column id="495" parent="491" name="articleNumber">
       <DataType>NVARCHAR(49)|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="495" parent="491" name="stockBalance">
+    <column id="496" parent="491" name="stockBalance">
       <DataType>integer|0s</DataType>
       <Position>2</Position>
     </column>
-    <index id="496" parent="491" name="sqlite_autoindex_balance_1">
+    <index id="497" parent="491" name="sqlite_autoindex_balance_1">
       <ColNames>articleNumber</ColNames>
       <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="497" parent="491" name="balance_pk">
+    <key id="498" parent="491" name="balance_pk">
       <ColNames>articleNumber</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_balance_1</UnderlyingIndexName>
     </key>
-    <column id="498" parent="492" name="articleNumber">
-      <DataType>NVARCHAR(49)|0s</DataType>
+    <column id="499" parent="492" name="articleNumber">
+      <DataType>NVARCHAR(150)|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="499" parent="492" name="productName">
+    <column id="500" parent="492" name="name">
       <DataType>NVARCHAR(150)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="500" parent="492" name="retailPrice">
-      <DataType>FLOAT(2)|0s</DataType>
+    <column id="501" parent="492" name="category">
+      <DataType>NVARCHAR(150)|0s</DataType>
       <Position>3</Position>
     </column>
-    <index id="501" parent="492" name="sqlite_autoindex_price_1">
+    <index id="502" parent="492" name="sqlite_autoindex_category_1">
       <ColNames>articleNumber</ColNames>
       <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="502" parent="492" name="price_pk">
+    <key id="503" parent="492" name="category_pk">
+      <ColNames>articleNumber</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_category_1</UnderlyingIndexName>
+    </key>
+    <column id="504" parent="493" name="articleNumber">
+      <DataType>NVARCHAR(49)|0s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="505" parent="493" name="retailPrice">
+      <DataType>FLOAT(2)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <index id="506" parent="493" name="sqlite_autoindex_price_1">
+      <ColNames>articleNumber</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="507" parent="493" name="price_pk">
       <ColNames>articleNumber</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_price_1</UnderlyingIndexName>
     </key>
-    <column id="503" parent="493" name="type">
+    <column id="508" parent="494" name="type">
       <DataType>text|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="504" parent="493" name="name">
+    <column id="509" parent="494" name="name">
       <DataType>text|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="505" parent="493" name="tbl_name">
+    <column id="510" parent="494" name="tbl_name">
       <DataType>text|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="506" parent="493" name="rootpage">
+    <column id="511" parent="494" name="rootpage">
       <DataType>int|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="507" parent="493" name="sql">
+    <column id="512" parent="494" name="sql">
       <DataType>text|0s</DataType>
       <Position>5</Position>
     </column>
