@@ -34,6 +34,7 @@ public class Parser {
         System.out.println("Средняя стоимость инфракрасной лампы:");
         Exercise2();
         System.out.println("\nЗадание 3:\n");
+        System.out.println("Пятёрка самых дорогих товаров, которых на складе более 10:");
         Exercise3(10, 5);
     }
 
