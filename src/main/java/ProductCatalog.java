@@ -64,7 +64,6 @@ public class ProductCatalog {
                             RANDOM()
                         LIMIT 10
                         """)));
-
         JFrame frame = new JFrame("Economy");
         frame.getContentPane().add(new ChartPanel(chart));
         frame.setSize(600,400);
